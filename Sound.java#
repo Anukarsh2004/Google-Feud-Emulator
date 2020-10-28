@@ -1,0 +1,32 @@
+
+import  javax.swing.*;
+import  java.awt.event.*;
+import java.applet.*;
+import java.net.*;
+
+public class Sound extends JFrame {
+     AudioClip audioClip;
+     boolean flag = false;
+     public Sound()  throws Exception{
+          super();
+          setSize(200, 200);
+          JButton b = new JButton("Push me");
+          URL url = new URL("file:" + System.getProperty("user.dir") + "/" + "media.io_BEST TROLL MUSIC 2016 (1).wav");
+          final AudioClip audioClip = Applet.newAudioClip(url);
+         
+          b.addActionListener(new ActionListener(){
+               public void actionPerformed(ActionEvent e) {
+                    //if(flag) { audioClip.play(); flag = !flag;}
+                    //else  { audioClip.stop(); flag = !flag;}
+                    audioClip.play();
+               }
+          });
+         
+          getContentPane().add(b);
+          setVisible(true);
+     }
+     public static void main (String args[]) throws Exception {
+          Sound s = new Sound();
+     }
+
+}
